@@ -6,7 +6,7 @@
 
 :root{
   --text-color: white;
-  --bg-mobile: url(./assets/bg-mobile-dark.jpg);
+  --bg-image: url(./assets/bg-mobile-dark.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
    --surface-color: rgba(255, 255, 255, 0.1);
    --switch-bg-image: url(./assets/moon-stars.svg);
@@ -14,7 +14,7 @@
 
 .light {
   --text-color: black;
-  --bg-mobile:  url(./assets/bg-mobile-light.jpg);
+  --bg-image:  url(./assets/bg-mobile-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --switch-bg-image: url(./assets/sun.svg);
@@ -32,7 +32,8 @@ body {
 
     o size tem a necessidade de conter a barra antes de sua informação */
 
-  background: var(--bg-mobile) no-repeat top center/cover;
+  background: var(--bg-image) no-repeat top center/cover;
+  height: 100vh;
 }
 
 body * {
@@ -42,7 +43,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 568px;
   margin: 56px auto auto;
   padding: 0 24px;
 }
@@ -172,17 +174,12 @@ ul li a:hover {
   background: var(--surface-color);
   /* padding: 16px; */
 
-  scale: 1.1;
-  
+  scale: 1.1; 
 }
 
 ion-icon {
   width: 24px;
   height: 24px;
-}
-
-footer a{
-  text-decoration: none; 
 }
 
 footer {
@@ -191,4 +188,15 @@ footer {
   align-items: center;
   gap: 4px;
   padding: 24px;
+}
+
+/* Inicio media queries */
+@media (min-width:700px) {
+  :root {
+    --bg-image: url("./assets/bg-desktop.jpg")
+  }
+
+  .light {
+    --bg-image: url("./assets/bg-desktop-light.jpg")
+  }
 }
